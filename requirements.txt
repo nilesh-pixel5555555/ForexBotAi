@@ -1,0 +1,24 @@
+# Core Trading & Analysis
+ccxt==4.2.25
+pandas==2.1.4
+numpy==1.26.3
+
+# Machine Learning
+scikit-learn==1.4.0
+
+# Telegram Integration
+python-telegram-bot==13.15
+
+# Scheduling & Async
+apscheduler==3.10.4
+
+# Web Server
+flask==3.0.0
+gunicorn==21.2.0
+
+# Environment Management
+python-dotenv==1.0.0
+
+# Additional utilities
+requests==2.31.0
+pytz==2024.1

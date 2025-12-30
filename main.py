@@ -3,9 +3,16 @@
 import os
 import sys
 import logging
+import asyncio # Added for the fix
 from datetime import datetime, timedelta
 from flask import Flask, jsonify
 import json
+
+# --- START WINDOWS FIX ---
+# This forces Windows to use a specific event loop policy to prevent "Event loop is closed" errors
+if sys.platform.startswith("win"):
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+# --- END WINDOWS FIX ---
 
 # Setup logging first
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -238,7 +245,6 @@ def generate_signal(symbol):
         message += "<i>Forex AI V2.5</i>"
         
         # Send message
-        import asyncio
         asyncio.run(bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message, parse_mode='HTML'))
         
         bot_stats['total_analyses'] += 1
@@ -328,7 +334,6 @@ def daily_report():
                 f"Net: {'🟢' if total_pips >= 0 else '🔴'} {total_pips:+.1f} pips"
             )
         
-        import asyncio
         asyncio.run(bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message, parse_mode='HTML'))
         logger.info("✅ Report sent")
         
@@ -422,4 +427,3 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
     logger.info(f"🚀 Starting on port {port}")
     app.run(host='0.0.0.0', port=port, debug=False)
-

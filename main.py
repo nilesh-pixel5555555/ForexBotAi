@@ -67,7 +67,7 @@ except Exception as e:
     np = None
 
 # Configuration
-FOREX_PAIRS = [p.strip() for p in os.getenv("FOREX_PAIRS", "EUR/USD,GBP/USD,USD/JPY").split(',')]
+FOREX_PAIRS = [p.strip() for p in os.getenv("FOREX_PAIRS", "EUR/USD,GBP/USD,USD/JPY,AUD/USD,USD/CHF").split(',')]
 bot_stats["monitored_assets"] = FOREX_PAIRS
 
 def load_trade_history():
@@ -422,3 +422,4 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
     logger.info(f"🚀 Starting on port {port}")
     app.run(host='0.0.0.0', port=port, debug=False)
+

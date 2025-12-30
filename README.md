@@ -1,5 +1,5 @@
 
-DM to get access to bot at telegram : https://t.me/NileshCPR
+DM to get access to bot at telegram
 🚀 Features
 📊 Professional Technical Analysis
 
@@ -29,5 +29,3 @@ Currency-Specific Analysis - JPY pairs handled correctly
 Web Dashboard - Beautiful status interface
 Automated Scheduling - Analysis every 30 minutes
 Multi-Pair Support - All 5 pairs simultaneously.
-
-DM to get access to bot at telegram : https://t.me/NileshCPR

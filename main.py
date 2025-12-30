@@ -14,9 +14,9 @@ import time
 import traceback 
 import json
 
-# --- ML Imports ---
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler 
+# --- ML Imports (Optional - commented out to avoid dependency issues) ---
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.preprocessing import StandardScaler 
 
 # --- CONFIGURATION ---
 from dotenv import load_dotenv 

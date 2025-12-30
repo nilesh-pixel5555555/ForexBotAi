@@ -370,7 +370,7 @@ def generate_and_send_signal(symbol):
         # --- PREMIUM SIGNAL TEMPLATE ---
         message = (
             f"╔════════════════════════════════╗\n"
-            f"  🌍 <b>PREMIER FOREX AI QUANT</b>\n"
+            f"  🌍 <b>PREMIER FOREX AI BOT</b>\n"
             f"╚════════════════════════════════╝\n\n"
             f"<b>Pair:</b> {symbol}\n"
             f"<b>Rate:</b> <code>{price:.{decimals}f}</code>\n\n"
@@ -392,7 +392,7 @@ def generate_and_send_signal(symbol):
         
         message += (
             f"----------------------------------------\n"
-            f"<i>Verified AI Forex Analysis V2.5 Elite</i>"
+            f"<i>Verified AI Forex Analysis</i>"
         )
 
         asyncio.run(bot.send_message(chat_id=TELEGRAM_CHAT_ID, text=message, parse_mode='HTML'))
@@ -491,3 +491,4 @@ def stats():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
+
